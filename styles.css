@@ -35,3 +35,13 @@
     margin: 20px;
     
 }
+
+.projects {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.info {
+    width: 50%;
+    text-align: center;
+}
