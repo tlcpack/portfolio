@@ -20,17 +20,18 @@
 
 .bio {
     display: flex;
-    justify-content: space-evenly;   
+    flex-wrap: wrap;
+    justify-content: space-around;   
 }
 
 .biopic {
-    width: 40%;
+    width: 35%;
     margin: 20px;
     text-align: center;
 }
 
 .biopara {
-    width: 40%;
+    width: 35%;
     margin: 20px;
     
 }
