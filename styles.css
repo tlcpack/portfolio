@@ -42,6 +42,9 @@
 }
 
 .info {
-    width: 50%;
+    width: 40%;
     text-align: center;
+    border: ridge;
+    border-radius: 30px;
+    padding: 30px;
 }
