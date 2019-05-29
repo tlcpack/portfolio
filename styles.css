@@ -4,4 +4,33 @@
 
 .header {
     display: flex;
+    justify-content: space-evenly;
+    margin:20px;
+    margin-bottom: 50px;
+}
+
+.subhead {
+    width: 30%;
+    padding: 20px;
+    margin: 15px;
+    border: dotted;
+    border-radius: 30px;
+    text-align: center;
+}
+
+.bio {
+    display: flex;
+    justify-content: space-evenly;   
+}
+
+.biopic {
+    width: 40%;
+    margin: 20px;
+    text-align: center;
+}
+
+.biopara {
+    width: 40%;
+    margin: 20px;
+    
 }
