@@ -13,7 +13,7 @@
     width: 30%;
     padding: 20px;
     margin: 15px;
-    border: dotted;
+    border: ridge;
     border-radius: 30px;
     text-align: center;
 }
@@ -22,6 +22,10 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;   
+}
+
+.bioname {
+    font-size: 20px;
 }
 
 .biopic {
