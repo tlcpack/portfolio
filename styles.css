@@ -18,6 +18,22 @@
     text-align: center;
 }
 
+.subhead:hover {
+    background-color: lightcoral;
+    color: white;
+    transition: all .3s ease;
+}
+
+.current {
+    width: 30%;
+    padding: 20px;
+    margin: 15px;
+    border: groove;
+    border-radius: 30px;
+    text-align: center;
+    background-color: lightpink;
+}
+
 .bio {
     display: flex;
     flex-wrap: wrap;
@@ -52,3 +68,4 @@
     border-radius: 30px;
     padding: 30px;
 }
+
