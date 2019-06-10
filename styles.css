@@ -1,6 +1,6 @@
-* {
+/* * {
     font-family: 'Source Sans Pro', sans-serif;
-}
+} */
 
 .header {
     display: flex;
@@ -42,6 +42,11 @@
 
 .bioname {
     font-size: 20px;
+}
+
+.biotitle {
+    font-size: 18px;
+    font: bold;
 }
 
 .biopic {
