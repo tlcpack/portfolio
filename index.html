@@ -9,7 +9,7 @@
     <title>Taylor's portfolio page</title>
 </head>
 
-<body>
+<body class="fade">
     <header>
         <div class="header">
             <div class=" current">Home</div>
@@ -31,4 +31,13 @@
     </div>
 
 
+    <script>
+
+        // document.body.classList.add('fade');
+
+        document.addEventListener("DOMContentLoaded", function(e) {
+            document.body.classList.remove('fade');
+        });
+    </script>
 </body>
+</html>

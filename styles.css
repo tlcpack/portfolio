@@ -1,6 +1,16 @@
-/* * {
+* {
     font-family: 'Source Sans Pro', sans-serif;
-} */
+}
+
+body {
+    opacity: 1;
+    transition: 0.7s opacity;
+}
+
+body.fade {
+    opacity: 0;
+    transition: none;
+}
 
 .header {
     display: flex;
@@ -46,7 +56,7 @@
 
 .biotitle {
     font-size: 18px;
-    font: bold;
+    font-weight: bold;
 }
 
 .biopic {
