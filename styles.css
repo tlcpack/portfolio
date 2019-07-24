@@ -9,7 +9,7 @@ body {
 
 body.fade {
     opacity: 0;
-    transition: none;
+    transition: 0.7s opacity;;
 }
 
 .header {
