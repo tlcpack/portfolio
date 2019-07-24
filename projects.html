@@ -21,52 +21,84 @@
     <h1 style="text-align:center;margin-bottom: 90px;">Projects</h1>
     
     <div class="projects">
-        <div class="info">
+        <div class="info left slide-in">
             <h3>
             <strong>Momentum Final Project:</strong> WeeCare daycare management app
             </h3><br>
             <p>This was our final project for Momentum Learning. Please use username "Linda" and password "testpassword" to log in and see the site</p><br>
             <a href="https://github.com/tlcpack/WeeCare">Code on Github</a>
         </div>
-        <div class="info"><a href="https://weecaremore.herokuapp.com/accounts/login/" target="_blank" >
+        <div class="info right slide-in"><a href="https://weecaremore.herokuapp.com/accounts/login/" target="_blank" >
             <img src="pics/WeeCare_highres.png" style="width:170px;height:auto; margin-bottom: 15px;"><br>Click to view our project
         </a></div>
     </div><br><br><br>
     <div class="projects">
-        <div class="info">
+        <div class="info left slide-in">
             <h3>
             iTunes search engine
             </h3><br>
             <p>This was a project using the iTunes API</p><br>
             <a href="https://github.com/tlcpack/itunes">Code on Github</a>
         </div>
-        <div class="info"><a href="https://tlcpack.github.io/itunes/" target="_blank" >
+        <div class="info right slide-in"><a href="https://tlcpack.github.io/itunes/" target="_blank" >
             <img src="https://www.macobserver.com/wp-content/uploads/2018/02/apple-rainbow-logo.jpg" style="width:100px;height:auto; margin-bottom: 15px;"><br>Click to search music
         </a></div>
     </div><br><br><br>
 
     <div class="projects">
-        <div class="info">
+        <div class="info left slide-in">
             <h3>
             Apile Blog
             </h3><br>
             <p>We created a blog similar to Reddit or Hacker News</p><br>
             <a href="https://github.com/tlcpack/apile_blog">Code on Github</a>
         </div>
-        <div class="info"><a href="https://shrouded-cove-96180.herokuapp.com/core/" target="_blank" >
+        <div class="info right slide-in"><a href="https://shrouded-cove-96180.herokuapp.com/core/" target="_blank" >
             <img src="https://www.esportsinlasvegas.com/wp-content/uploads/2017/01/blog-icon.png" style="width:100px;height:auto; margin-bottom: 15px;"><br>Click to blog
         </a></div>
     </div><br><br><br>
 
     <div class="projects">
-        <div class="info">
+        <div class="info left slide-in">
             <h3>
             Location of campaign contributors
             </h3><br>
             <p>This is something I'm tinkering with to show the location of organizations donating to political campaigns and candidates. I'm using the Google Maps API and ProPublica API. Ideally, showing that organizations from outside a rep's jurisdiction are the main contributors</p><br>
             <a href="https://github.com/tlcpack/political_money">Code on Github</a>
         </div>
-        <div class="info"><a href="https://tlcpack.github.io/political_money/" target="_blank" >
+        <div class="info right slide-in"><a href="https://tlcpack.github.io/political_money/" target="_blank" >
             <img src="http://pngimg.com/uploads/under_construction/under_construction_PNG66.png" style="width:100px;height:auto; margin-bottom: 15px;"><br>Click to search candidates
         </a></div>
     </div>
+
+<script>
+    function debounce(func, wait = 20, immediate = true) {
+      var timeout;
+      return function() {
+        var context = this, args = arguments;
+        var later = function() {
+          timeout = null;
+          if (!immediate) func.apply(context, args);
+        };
+        var callNow = immediate && !timeout;
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+        if (callNow) func.apply(context, args);
+      };
+    }
+    const sliderImages = document.querySelectorAll('.slide-in');
+    function checkSlide(e) {
+        sliderImages.forEach(sliderImage => {
+            const slideInAt = (window.scrollY + window.innerHeight) - sliderImage.height / 2;
+            const imageBottom = sliderImage.offsetTop + sliderImage.height;
+            const isHalfShown = slideInAt > sliderImage.offsetTop;
+            const isNotScrolledPast = window.scrollY < imageBottom;
+            if (isHalfShown && isNotScrolledPast) {
+                sliderImage.classList.add('active');
+            } else {
+                sliderImage.classList.remove('active');
+            }
+        });
+    }
+    window.addEventListener('scroll', debounce(checkSlide));
+</script>
