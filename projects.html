@@ -72,7 +72,7 @@
     </div>
 
 <script>
-    function debounce(func, wait = 20, immediate = true) {
+    function debounce(func, wait = 10, immediate = true) {
       var timeout;
       return function() {
         var context = this, args = arguments;
@@ -89,8 +89,8 @@
     const sliderImages = document.querySelectorAll('.slide-in');
     function checkSlide(e) {
         sliderImages.forEach(sliderImage => {
-            const slideInAt = (window.scrollY + window.innerHeight) - sliderImage.height / 2;
-            const imageBottom = sliderImage.offsetTop + sliderImage.height;
+            const slideInAt = (window.scrollY + window.innerHeight) - 20;
+            const imageBottom = sliderImage.offsetTop + 20;
             const isHalfShown = slideInAt > sliderImage.offsetTop;
             const isNotScrolledPast = window.scrollY < imageBottom;
             if (isHalfShown && isNotScrolledPast) {
