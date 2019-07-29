@@ -86,6 +86,32 @@ body.fade {
     margin: 20px;
 }
 
+
+.left {
+    margin-right: 2px;
+}
+
+.right {
+    margin-left: 2px;
+}
+
+.slide-in {
+    opacity: 0;
+    transition: all .5s;
+}
+
+.left.slide-in {
+    transform: translateX(-30%) scale(0.95);
+}
+
+.right.slide-in {
+    transform: translateX(30%) scale(0.95);
+}
+
+.slide-in.active {
+    opacity: 1;
+    transform: translateX(0%) scale(1);
+}
 @media screen and (min-width: 768px) {
     .projects {
         display: flex;
