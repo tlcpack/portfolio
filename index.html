@@ -1,43 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-<link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Taylor's portfolio page</title>
-</head>
+    <link
+    rel="stylesheet"
+    href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"
+  />
+  </head>
 
-<body class="fade">
+  <body>
     <header>
-        <div class="header">
-            <div class=" current">Home</div>
-            <a href="projects.html" class="subhead"><div >Projects</div></a>
-            <a href="resume.html" class="subhead"><div>Resume</div></a>
-        </div>
+      <div class="header">
+        <div class="current">Home</div>
+        <a href="projects.html" class="subhead"><div>Projects</div></a>
+        <a href="resume.html" class="subhead"><div>Resume</div></a>
+      </div>
     </header>
 
     <div class="bio">
-        <div class="biopic"><img src="pics/Taylor Cooke Headshot (Cohort 4).jpg" style="width: 200px; height: auto; border: solid; border-radius: 30px;"><br><br>
-            <a href="https://www.linkedin.com/in/taylor-cooke-9121591/"><img src="pics/linkedin.svg" style="margin: 10px;width:50px; height: auto;"></a>
-            <a href="https://github.com/tlcpack"><img src="pics/github.svg" style="margin:10px;width:50px; height: auto;"></a>
+      <div class="biopic">
+        <img
+          src="pics/Taylor Cooke Headshot (Cohort 4).jpg"
+          style="
+            width: 200px;
+            height: auto;
+            border: solid;
+            border-radius: 30px;
+          "
+        /><br /><br />
+
+        <div class="social-panel-container">
+          <div class="social-panel">
+            <ul>
+              <li>
+                <a href="https://github.com/tlcpack" target="_blank">
+                  <i class="fab fa-github"></i>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://linkedin.com/in/taylor-cooke-9121591/"
+                  target="_blank"
+                >
+                  <i class="fab fa-linkedin"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div class="biopara">
-            <div class="bioname">Taylor Cooke</div><br><br><br>
-            <div class="biotitle">Software Developer</div><br><br><br>
-            <div>I just finished at Momentum Learning's code school boot camp. I have a degree in Chemistry, about 15 years of experience in Recruiting, and have begun my career transition. I am excited to start a new journey in the world of software development! This site is still being updated, but please click on the Projects link above to view some of what I've completed.</div>
+        <button class="floating-btn">
+          Get in Touch
+        </button>
+        <!-- <a href="https://www.linkedin.com/in/taylor-cooke-9121591/"><img src="pics/linkedin.svg" style="margin: 10px;width:50px; height: auto;"></a>
+            <a href="https://github.com/tlcpack"><img src="pics/github.svg" style="margin:10px;width:50px; height: auto;"></a> -->
+      </div>
+      <div class="biopara">
+        <div class="bioname">Taylor Cooke</div>
+        <br /><br /><br />
+        <div class="biotitle">Software Developer</div>
+        <br /><br /><br />
+        <div>
+          I just finished at Momentum Learning's code school boot camp. I have a
+          degree in Chemistry, about 15 years of experience in Recruiting, and
+          have begun my career transition. I am excited to start a new journey
+          in the world of software development! This site is still being
+          updated, but please click on the Projects link above to view some of
+          what I've completed.
         </div>
+      </div>
     </div>
 
 
-    <script>
+  </body>
+  <script>
+    const floating_btn = document.querySelector(".floating-btn");
+    const close_btn = document.querySelector(".close-btn");
+    const social_panel_container = document.querySelector(
+      ".social-panel-container"
+    );
 
-        // document.body.classList.add('fade');
+    floating_btn.addEventListener("click", () => {
+      social_panel_container.classList.toggle("visible");
+    });
 
-        document.addEventListener("DOMContentLoaded", function(e) {
-            document.body.classList.remove('fade');
-        });
-    </script>
-</body>
+    close_btn.addEventListener("click", () => {
+      social_panel_container.classList.remove("visible");
+    });
+  </script>
 </html>
