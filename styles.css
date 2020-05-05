@@ -120,8 +120,8 @@ body.fade {
 .container .open-btn {
   background-image: linear-gradient(
     110.1deg,
-    rgba(241, 115, 30, 1) 18.9%,
-    rgba(231, 29, 54, 1) 90.7%
+    lightpink 18.9%,
+    lightcoral 90.7%
   );
   color: #fff;
   cursor: pointer;
@@ -165,7 +165,7 @@ body.fade {
 }
 
 .container a.x {
-  background-color: #282c37;
+  background-color: lightcoral;
 }
 .container a.lin {
   background-color: #007bb5;
