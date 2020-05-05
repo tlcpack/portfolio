@@ -203,16 +203,18 @@ body.fade {
 	cursor: pointer;
 	font-size: 16px;
 	line-height: 20px;
-	padding: 12px 20px;
+	padding: 12px;
 	position: fixed;
-	bottom: 20px;
-	right: 20px;
-	z-index: 999;
+	/* bottom: 20px; */
+	/* right: 20px; */
+    z-index: 999;
+    vertical-align: auto;
 }
 
 .floating-btn:hover {
 	background-color: #ffffff;
-	color: #001F61;
+    color: #001F61;
+    transition: all .3s ease;
 }
 
 .floating-btn:focus {
