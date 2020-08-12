@@ -42,8 +42,8 @@
       </div>
       <div class="biopara">
         <div class="bioname">Taylor Cooke</div>
-        <br /><br /><br />
-        <div class="biotitle" id="text">Software Developer</div>
+        <br /><br />
+        <div class="biotitle" id="text"></div>
         <br /><br /><br />
         <div>
           I'm a Software Developer who has been working at Relias for almost a
@@ -55,6 +55,42 @@
           I am currently using Angular and C#. At Momentum, we used Python and
           Django. I'm still very interested in learning more Python and Django,
           as well as other front-end frameworks like Vue and React
+        </div>
+      </div>
+      <br />
+      <br />
+      <div class="fun">
+        <br />
+        This exercise is pretty much true in life, not just software...
+        <h2>How do you want your project to be?</h2>
+        <div class="toggle-container">
+          <input type="checkbox" class="toggle" id="good" />
+          <label for="good" class="label">
+            <div class="ball"></div>
+          </label>
+          <span>
+            Good
+          </span>
+        </div>
+
+        <div class="toggle-container">
+          <input type="checkbox" class="toggle" id="cheap" />
+          <label for="cheap" class="label">
+            <div class="ball"></div>
+          </label>
+          <span>
+            Cheap
+          </span>
+        </div>
+
+        <div class="toggle-container">
+          <input type="checkbox" class="toggle" id="fast" />
+          <label for="fast" class="label">
+            <div class="ball"></div>
+          </label>
+          <span>
+            Fast
+          </span>
         </div>
       </div>
     </div>
@@ -74,6 +110,35 @@
 
         if (idx > prog.length) {
           return;
+        }
+      }
+
+      const toggles = document.querySelectorAll(".toggle");
+      const good = document.getElementById("good");
+      const cheap = document.getElementById("cheap");
+      const fast = document.getElementById("fast");
+
+      toggles.forEach((toggle) => {
+        toggle.addEventListener("change", (e) => {
+          doTheTrick(e.target);
+        });
+      });
+
+      function doTheTrick(theClickedOne) {
+        // if all 3 are checked
+        if (good.checked && cheap.checked && fast.checked) {
+          // check to see which one was clicked and toggle another one
+          if (good === theClickedOne) {
+            fast.checked = false;
+          }
+
+          if (cheap === theClickedOne) {
+            good.checked = false;
+          }
+
+          if (fast === theClickedOne) {
+            cheap.checked = false;
+          }
         }
       }
     </script>
