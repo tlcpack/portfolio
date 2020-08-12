@@ -1,124 +1,197 @@
 * {
-    font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
 }
 
 body {
-    opacity: 1;
-    transition: 0.7s opacity;
+  opacity: 1;
+  transition: 0.7s opacity;
 }
 
 body.fade {
-    opacity: 0;
-    transition: 0.7s opacity;;
+  opacity: 0;
+  transition: 0.7s opacity;
 }
 
 .header {
-    display: flex;
-    justify-content: space-evenly;
-    margin:20px;
-    margin-bottom: 50px;
+  display: flex;
+  justify-content: space-evenly;
+  margin: 20px;
+  margin-bottom: 50px;
 }
 
 .subhead {
-    width: 30%;
-    padding: 20px;
-    margin: 15px;
-    border: ridge;
-    border-radius: 30px;
-    text-align: center;
+  width: 30%;
+  padding: 20px;
+  margin: 15px;
+  border: ridge;
+  border-radius: 30px;
+  text-align: center;
 }
 
 .subhead:hover {
-    background-color: lightcoral;
-    color: white;
-    transition: all .3s ease;
+  background-color: lightcoral;
+  color: white;
+  transition: all 0.3s ease;
 }
 
 .current {
-    width: 30%;
-    padding: 20px;
-    margin: 15px;
-    border: groove;
-    border-radius: 30px;
-    text-align: center;
-    background-color: lightpink;
+  width: 30%;
+  padding: 20px;
+  margin: 15px;
+  border: groove;
+  border-radius: 30px;
+  text-align: center;
+  background-color: lightpink;
 }
 
 .bio {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;   
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 .bioname {
-    font-size: 22px;
+  font-size: 22px;
 }
 
 .biotitle {
-    font-size: 18px;
-    font-weight: bold;
+  font-size: 18px;
+  font-weight: bold;
 }
 
 .biopic {
-    width: 35%;
-    margin: 20px;
-    text-align: center;
+  width: 35%;
+  margin: 20px;
+  text-align: center;
 }
 
 .biopara {
-    width: 35%;
-    margin: 20px;
-    
+  width: 35%;
+  margin: 20px;
+}
+
+.fun {
+  display: flex;
+  align-items: center;
+  font-family: "Muli", sans-serif;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0;
+}
+
+.toggle-container {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  width: 200px;
+}
+
+.toggle {
+  visibility: hidden;
+}
+
+.label {
+  background-color: #d0d0d0;
+  border-radius: 50px;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  margin: 0 15px 0;
+  height: 40px;
+  width: 80px;
+}
+
+.toggle:checked + .label {
+  background-color: lightcoral;
+}
+
+.ball {
+  animation: shrinkALittle 0.3s linear forwards;
+  background: #fff;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  height: 34px;
+  width: 34px;
+}
+
+.toggle:checked + .label .ball {
+  animation: growALittle 0.3s linear forwards;
+  /* 	transform: translateX(40px); */
+}
+
+@keyframes growALittle {
+  0% {
+    transform: translateX(0) scale(1);
+  }
+  50% {
+    transform: translateX(20px) scale(1.2);
+  }
+
+  100% {
+    transform: translateX(40px) scale(1);
+  }
+}
+
+@keyframes shrinkALittle {
+  0% {
+    transform: translateX(40px) scale(1);
+  }
+  50% {
+    transform: translateX(20px) scale(1.2);
+  }
+
+  100% {
+    transform: translateX(0) scale(1);
+  }
 }
 
 .projects {
-    
-    justify-content: space-evenly;
+  justify-content: space-evenly;
 }
-
-
 
 .info {
-    text-align: center;
-    border: ridge;
-    border-radius: 30px;
-    padding: 30px;
-    margin: 20px;
+  text-align: center;
+  border: ridge;
+  border-radius: 30px;
+  padding: 30px;
+  margin: 20px;
 }
 
-
 .left {
-    margin-right: 2px;
+  margin-right: 2px;
 }
 
 .right {
-    margin-left: 2px;
+  margin-left: 2px;
 }
 
 .slide-in {
-    opacity: 0;
-    transition: all .5s;
+  opacity: 0;
+  transition: all 0.5s;
 }
 
 .left.slide-in {
-    transform: translateX(-30%) scale(0.95);
+  transform: translateX(-30%) scale(0.95);
 }
 
 .right.slide-in {
-    transform: translateX(30%) scale(0.95);
+  transform: translateX(30%) scale(0.95);
 }
 
 .slide-in.active {
-    opacity: 1;
-    transform: translateX(0%) scale(1);
+  opacity: 1;
+  transform: translateX(0%) scale(1);
 }
 @media screen and (min-width: 768px) {
-    .projects {
-        display: flex;
-    }
+  .projects {
+    display: flex;
+  }
 
-    .info {
-        width: 40%;
-        
-    }
+  .info {
+    width: 40%;
+  }
 }
