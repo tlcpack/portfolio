@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Taylor's Projects</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <header>
-        <div class="header">
-            <a href="index.html" class="subhead"><div >Home</div></a>
-            <div class="current">Projects</div>
-            <a href="resume.html" class="subhead"><div>Resume</div></a>
-        </div>
+      <div class="header">
+        <a href="index.html" class="subhead"><div>Home</div></a>
+        <div class="current">Projects</div>
+        <a href="resume.html" class="subhead"><div>Resume</div></a>
+      </div>
     </header>
 
-    <h1 style="text-align:center;margin-bottom: 90px;">Projects</h1>
-    
+    <h1 style="text-align: center; margin-bottom: 90px">Projects</h1>
+
     <div class="projects">
         <div class="info left slide-in">
             <h3>
@@ -34,16 +34,26 @@
     </div>
 
     <div class="projects">
-        <div class="info left slide-in">
-            <h3>
-            Info about political reps
-            </h3><br>
-            <p>This is something I'm tinkering with to retreive information about congressional reps. Using the ProPublica API and trying different JavaScript techniques</p><br>
-            <a href="https://github.com/tlcpack/political_money">Code on Github</a>
-        </div>
-        <div class="info right slide-in"><a href="https://tlcpack.github.io/political_money/" target="_blank" >
-            <img src="http://www.pngall.com/wp-content/uploads/2016/05/America-Flag-Download-PNG.png" style="width:100px;height:auto; margin-bottom: 15px;"><br>Click to search candidates
-        </a></div>
+      <div class="info left slide-in">
+        <h3>Info about political reps</h3>
+        <p>
+          This is something I'm tinkering with to retreive information about
+          congressional reps. Using the ProPublica API and trying different
+          JavaScript techniques
+        </p>
+        <a href="https://github.com/tlcpack/political_money">Code on Github</a>
+      </div>
+      <div class="info right slide-in">
+        <a href="https://tlcpack.github.io/political_money/" target="_blank">
+          <div>
+            <img
+              src="http://www.pngall.com/wp-content/uploads/2016/05/America-Flag-Download-PNG.png"
+              style="width: 100px; height: auto; margin-bottom: 15px"
+            />
+          </div>
+          Click to search candidates
+        </a>
+      </div>
     </div>
 
     
@@ -99,34 +109,37 @@
         </a></div>
     </div>
 
-<script>
-    function debounce(func, wait = 10, immediate = true) {
-      var timeout;
-      return function() {
-        var context = this, args = arguments;
-        var later = function() {
-          timeout = null;
-          if (!immediate) func.apply(context, args);
+    <script>
+      function debounce(func, wait = 10, immediate = true) {
+        var timeout;
+        return function () {
+          var context = this,
+            args = arguments;
+          var later = function () {
+            timeout = null;
+            if (!immediate) func.apply(context, args);
+          };
+          var callNow = immediate && !timeout;
+          clearTimeout(timeout);
+          timeout = setTimeout(later, wait);
+          if (callNow) func.apply(context, args);
         };
-        var callNow = immediate && !timeout;
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-        if (callNow) func.apply(context, args);
-      };
-    }
-    const sliderImages = document.querySelectorAll('.slide-in');
-    function checkSlide(e) {
-        sliderImages.forEach(sliderImage => {
-            const slideInAt = (window.scrollY + window.innerHeight) - 20;
-            const imageBottom = sliderImage.offsetTop + 20;
-            const isHalfShown = slideInAt > sliderImage.offsetTop;
-            const isNotScrolledPast = window.scrollY < imageBottom;
-            if (isHalfShown && isNotScrolledPast) {
-                sliderImage.classList.add('active');
-            } else {
-                sliderImage.classList.remove('active');
-            }
+      }
+      const sliderImages = document.querySelectorAll(".slide-in");
+      function checkSlide(e) {
+        sliderImages.forEach((sliderImage) => {
+          const slideInAt = window.scrollY + window.innerHeight - 20;
+          const imageBottom = sliderImage.offsetTop + 20;
+          const isHalfShown = slideInAt > sliderImage.offsetTop;
+          const isNotScrolledPast = window.scrollY < imageBottom;
+          if (isHalfShown && isNotScrolledPast) {
+            sliderImage.classList.add("active");
+          } else {
+            sliderImage.classList.remove("active");
+          }
         });
-    }
-    window.addEventListener('scroll', debounce(checkSlide));
-</script>
+      }
+      window.addEventListener("scroll", debounce(checkSlide));
+    </script>
+  </body>
+</html>
